@@ -1,0 +1,32 @@
+{
+  "extName": {
+    "message": "Krypta Passkeys"
+  },
+  "extDescription": {
+    "message": "Passkeys im lokalen Krypta-Tresor speichern und verwenden. Benötigt die Krypta-App für Windows."
+  },
+  "popupLocked": {
+    "message": "Krypta ist gesperrt. Entsperre es und versuche es erneut."
+  },
+  "popupNotRunning": {
+    "message": "Krypta läuft nicht, oder der Browser ist noch nicht verbunden (Krypta: Einstellungen, Passkeys im Browser)."
+  },
+  "popupNoPage": {
+    "message": "Öffne zuerst eine Website."
+  },
+  "popupDeclined": {
+    "message": "Nicht ausgefüllt."
+  },
+  "popupPageChanged": {
+    "message": "Die Seite hat sich geändert. Es wurde nichts ausgefüllt."
+  },
+  "popupConfirm": {
+    "message": "Bestätige im Krypta-Fenster."
+  },
+  "popupNoForm": {
+    "message": "Auf dieser Seite wurde kein Passwortfeld gefunden."
+  },
+  "popupNone": {
+    "message": "Für diese Website ist keine Anmeldung gespeichert."
+  }
+}

@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Krypta.App/Krypta.App.csproj" />
+    <Project Path="src/Krypta.Core/Krypta.Core.csproj" />
+    <Project Path="src/Krypta.NativeHost/Krypta.NativeHost.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Krypta.Tests/Krypta.Tests.csproj" />
+  </Folder>
+</Solution>

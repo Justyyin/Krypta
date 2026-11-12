@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>Krypta</AssemblyName>
+    <RootNamespace>Krypta.App</RootNamespace>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Resources\krypta.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <!-- WPF0001: the Fluent theme (ThemeMode) is still marked experimental. -->
+    <NoWarn>$(NoWarn);WPF0001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Krypta.Core\Krypta.Core.csproj" />
+    <!-- Built first, but not referenced as a library: its files are copied next to Krypta.exe below. -->
+    <ProjectReference Include="..\Krypta.NativeHost\Krypta.NativeHost.csproj" ReferenceOutputAssembly="false" Private="false" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <NativeHostDir>$(ArtifactsPath)\bin\Krypta.NativeHost\$(Configuration.ToLowerInvariant())</NativeHostDir>
+  </PropertyGroup>
+
+  <Target Name="CopyNativeHost" AfterTargets="Build">
+    <ItemGroup>
+      <NativeHostFiles Include="$(NativeHostDir)\Krypta.NativeHost.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(NativeHostFiles)" DestinationFolder="$(OutDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <Target Name="PublishNativeHost" AfterTargets="Publish">
+    <ItemGroup>
+      <NativeHostPublishFiles Include="$(NativeHostDir)\Krypta.NativeHost.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(NativeHostPublishFiles)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="true" />
+  </Target>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Krypta.Tests" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\krypta.ico" />
+  </ItemGroup>
+
+</Project>

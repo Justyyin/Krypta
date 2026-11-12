@@ -1,0 +1,8 @@
+<Project>
+  <PropertyGroup>
+    <!-- All build output goes to /artifacts (short paths, one folder to ignore). -->
+    <ArtifactsPath>$(MSBuildThisFileDirectory)artifacts</ArtifactsPath>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,32 @@
+{
+  "extName": {
+    "message": "Krypta Passkeys"
+  },
+  "extDescription": {
+    "message": "Save and use passkeys from your local Krypta vault. Needs the Krypta app for Windows."
+  },
+  "popupLocked": {
+    "message": "Krypta is locked. Unlock it and try again."
+  },
+  "popupNotRunning": {
+    "message": "Krypta is not running, or the browser is not connected yet (Krypta: Settings, Passkeys in the browser)."
+  },
+  "popupNoPage": {
+    "message": "Open a website first."
+  },
+  "popupDeclined": {
+    "message": "Not filled in."
+  },
+  "popupPageChanged": {
+    "message": "The page changed. Nothing was filled in."
+  },
+  "popupConfirm": {
+    "message": "Confirm in the Krypta window."
+  },
+  "popupNoForm": {
+    "message": "No password field was found on this page."
+  },
+  "popupNone": {
+    "message": "No login saved for this website."
+  }
+}

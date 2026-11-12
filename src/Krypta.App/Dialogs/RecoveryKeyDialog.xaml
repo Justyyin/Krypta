@@ -1,0 +1,15 @@
+<Window x:Class="Krypta.App.RecoveryKeyDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="{DynamicResource Recovery.Title}" Width="520" SizeToContent="Height" ResizeMode="NoResize"
+        ShowInTaskbar="False" WindowStartupLocation="CenterOwner">
+    <StackPanel Margin="24,20,24,20">
+        <TextBlock Text="{DynamicResource Recovery.Text}" TextWrapping="Wrap" />
+        <TextBox x:Name="KeyText" IsReadOnly="True" TextWrapping="Wrap" FontFamily="{StaticResource MonoFont}" FontSize="16"
+                 Margin="0,14,0,0" Padding="12,10" />
+        <Button Content="{DynamicResource Detail.Copy}" Click="Copy_Click" HorizontalAlignment="Left" Margin="0,8,0,0" />
+        <CheckBox x:Name="ConfirmCheck" Margin="0,16,0,0" Content="{DynamicResource Recovery.Confirm}" Click="Confirm_Changed" />
+        <Button x:Name="CloseButton" Content="{DynamicResource Common.Ok}" Style="{DynamicResource AccentButtonStyle}"
+                IsEnabled="False" HorizontalAlignment="Right" MinWidth="100" Margin="0,12,0,0" Click="Close_Click" />
+    </StackPanel>
+</Window>

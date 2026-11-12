@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "version": "0.1.0",
+  "default_locale": "en",
+  "minimum_chrome_version": "111",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1wNP+zsFyLu+UYTPBv52tD6tBCyJMuXWMOiDZxLURYNuphDy7KuYuv2evqkDJR+SAgCzx/ggdatfclvMBI6nVOGRENwkk+XIRJ7YSFO5MjzAGTpLCsqpef4mYcP5Y9ssX/ST3Gk1+adOL0p/f9CjS/y8wE7cWvKAFo4WzwJAdwVwTlVsFms4zKIFIjyIlHJXLwHY+fq0QYYMLruK137sQzYtReecv+a+uu7bQAgj+f7f9Di73CURVKAYs4hJV7WVsxrhrb1SY3ceS3cIPVC8YDBIC0hgiweAsG27KXw6LqKIdNk3nQHudY0BhBe8XrGAev68MUqbVaWQzoVBNoAHtwIDAQAB",
+  "permissions": [
+    "nativeMessaging",
+    "activeTab",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "page.js"
+      ],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "https://*/*",
+        "http://localhost/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Krypta",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Build output
+artifacts/
+bin/
+obj/
+
+# IDE and OS files
+.vs/
+.idea/
+*.user
+Thumbs.db
+.DS_Store
+
+# Never commit vaults, keys or packed extensions
+*.krypta
+*.krypta.bak
+*.krypta.tmp
+*.pem
+*.crx

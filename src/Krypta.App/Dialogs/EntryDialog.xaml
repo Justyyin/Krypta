@@ -1,0 +1,90 @@
+<Window x:Class="Krypta.App.EntryDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Width="520" SizeToContent="Height" MaxHeight="720" ResizeMode="NoResize" ShowInTaskbar="False"
+        WindowStartupLocation="CenterOwner">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Bottom" Margin="24,0,24,20">
+            <TextBlock x:Name="ErrorText" TextWrapping="Wrap" Margin="0,12,0,0" Visibility="Collapsed"
+                       Foreground="{DynamicResource SystemFillColorCriticalBrush}" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,16,0,0">
+                <Button Content="{DynamicResource Common.Save}" Style="{DynamicResource AccentButtonStyle}" IsDefault="True"
+                        MinWidth="100" Click="Save_Click" Margin="0,0,8,0" />
+                <Button Content="{DynamicResource Common.Cancel}" IsCancel="True" MinWidth="100" />
+            </StackPanel>
+        </StackPanel>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="24,12,24,4">
+                <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Entry.Kind}" />
+                <ComboBox x:Name="KindBox" HorizontalAlignment="Left" MinWidth="220" SelectionChanged="Kind_Changed" />
+
+                <TextBlock x:Name="TitleLabel" Style="{StaticResource FieldLabel}" />
+                <TextBox x:Name="TitleInput" />
+
+                <StackPanel x:Name="UsernamePanel">
+                    <TextBlock x:Name="UsernameLabel" Style="{StaticResource FieldLabel}" />
+                    <TextBox x:Name="UsernameInput" />
+                </StackPanel>
+
+                <StackPanel x:Name="CardPanel">
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Card.Number}" />
+                    <TextBox x:Name="CardNumberInput" FontFamily="{StaticResource MonoFont}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel>
+                            <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Card.Expiry}" />
+                            <TextBox x:Name="CardExpiryInput" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Card.Code}" />
+                            <TextBox x:Name="CardCodeInput" FontFamily="{StaticResource MonoFont}" />
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel x:Name="PasswordPanel">
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Detail.Password}" />
+                    <DockPanel>
+                        <Button DockPanel.Dock="Right" Content="{DynamicResource Entry.Generate}" Click="Generate_Click" Margin="8,0,0,0" />
+                        <TextBox x:Name="PasswordInput" FontFamily="{StaticResource MonoFont}" />
+                    </DockPanel>
+                </StackPanel>
+
+                <StackPanel x:Name="LoginPanel">
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Detail.Website}" />
+                    <TextBox x:Name="UrlInput" />
+
+                    <TextBlock Style="{StaticResource SectionTitle}" Text="{DynamicResource Entry.TwoFactor}" />
+                    <TextBlock Style="{StaticResource Hint}" Text="{DynamicResource Entry.ScanHint}" />
+                    <StackPanel Orientation="Horizontal" Margin="0,8,0,0">
+                        <Button Style="{DynamicResource AccentButtonStyle}" Click="ScanScreen_Click" Margin="0,0,8,0">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="&#xED14;" FontFamily="{StaticResource IconFont}" VerticalAlignment="Center" Margin="0,0,6,0" />
+                                <TextBlock Text="{DynamicResource Entry.ScanScreen}" />
+                            </StackPanel>
+                        </Button>
+                        <Button Content="{DynamicResource Entry.ScanFile}" Click="ScanFile_Click" Margin="0,0,8,0" />
+                        <Button Content="{DynamicResource Entry.ScanClipboard}" Click="ScanClipboard_Click" />
+                    </StackPanel>
+                    <TextBlock x:Name="ScanStatus" Style="{StaticResource Hint}" Margin="0,8,0,0" Visibility="Collapsed" />
+                    <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Entry.Secret}" />
+                    <TextBox x:Name="SecretInput" FontFamily="{StaticResource MonoFont}" />
+                    <TextBlock x:Name="PasskeyInfo" Style="{StaticResource Hint}" Margin="0,16,0,0" Visibility="Collapsed" />
+                </StackPanel>
+
+                <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Detail.Notes}" />
+                <TextBox x:Name="NotesInput" AcceptsReturn="True" TextWrapping="Wrap" MinHeight="60" MaxHeight="120"
+                         VerticalScrollBarVisibility="Auto" />
+
+                <TextBlock Style="{StaticResource FieldLabel}" Text="{DynamicResource Entry.Tags}" />
+                <TextBox x:Name="TagsInput" />
+                <CheckBox x:Name="FavoriteCheck" Content="{DynamicResource Entry.Favorite}" Margin="0,10,0,0" />
+            </StackPanel>
+        </ScrollViewer>
+    </DockPanel>
+</Window>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    :root { color-scheme: light dark; }
+    body { font: 13px "Segoe UI", system-ui, sans-serif; margin: 0; width: 300px; }
+    header { display: flex; align-items: center; gap: 8px; padding: 12px 14px 8px; font-weight: 600; font-size: 14px; }
+    header img { width: 20px; height: 20px; }
+    #status { padding: 4px 14px 14px; opacity: 0.8; line-height: 1.4; }
+    ul { list-style: none; margin: 0; padding: 0 6px 8px; }
+    button.login { display: block; width: 100%; text-align: left; border: 0; background: none; color: inherit;
+                   padding: 8px; border-radius: 6px; font: inherit; cursor: pointer; }
+    button.login:hover, button.login:focus-visible { background: color-mix(in srgb, currentColor 12%, transparent); outline: none; }
+    .title { font-weight: 600; }
+    .user { opacity: 0.75; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <header><img src="icons/icon48.png" alt=""><span>Krypta</span></header>
+  <ul id="logins"></ul>
+  <div id="status"></div>
+  <script src="popup.js"></script>
+</body>
+</html>
